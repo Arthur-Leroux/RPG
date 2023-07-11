@@ -6,20 +6,25 @@ const app = {
     x: 5,
     y: 3,
   },
-//creation des div row et cell 
+  //creation des div row et cell
   drawBoard: function () {
-    for (let i = 0; i < 4; i++) { //première boucle pour les div row adopter par #board
-      const boardElement = document.querySelector(`#board`);
+    const boardElement = document.querySelector(`#board`);
+    for (let i = 0; i < 4; i++) {
+      //première boucle pour les div row adopter par #board
+      
       const rowElement = document.createElement(`div`);
       rowElement.classList.add(`row`);
       boardElement.appendChild(rowElement);
       console.log(rowElement);
-      for (let i = 0; i < 6; i++) { //deuxième boucle pour les div cell adopter par les div row
-        const cellElement = document.createElement(`div`);
-        rowElement.appendChild(cellElement);
-        console.log(cellElement);
-      }
+    
+    for (let j = 0; j < 6; j++) {
+      //deuxième boucle pour les div cell adopter par les div row
+      const cellElement = document.createElement(`div`);
+      cellElement.classList.add(`cell`);
+      rowElement.appendChild(cellElement);
+      console.log(cellElement);
     }
+  }
   },
 
   init: function () {
