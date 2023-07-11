@@ -6,6 +6,7 @@ const app = {
     x: 5,
     y: 3,
   },
+  //PARTIE 1
   //creation des div row et cell
   drawBoard: function () {
     const boardElement = document.querySelector(`#board`);
