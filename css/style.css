@@ -27,3 +27,6 @@ flex-direction: column;
    
     border-radius: 10%;
 }
+.targetCell{
+    background-color: green;
+}
