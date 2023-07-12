@@ -26,42 +26,64 @@ const app = {
         const cellElement = document.createElement(`div`);
         cellElement.classList.add(`cell`);
         rowElement.appendChild(cellElement);
-        //console.log(cellElement);
-
-        /*
-        Toujours dans la méthode drawBoard, lors de la création des cases, on rajoute une série de test :
-
-        Si la case courante a les mêmes coordonnées (x ET y) que la variable targetCell, 
-        on ajoute la classe CSS targetCell à la case.
-        Cette classe CSS est a créer pour que la case soit verte. */
-
-        // récuperer la case courante
-
-        // console.log(cellElement);
       }
     }
+
+    //PARTIE 2
+    //cell d'arrivée
     const cellElements = document.querySelectorAll(`.cell`); //sélectionne toutes les div avec la classe .cell
 
-    const returnTarget = Object.assign(cellElements[23], app.targetCell); // j'assigne la propriétés de target cell a l'élement cell
+    const returnTargetFinal = Object.assign(cellElements[23], app.targetCell); // j'assigne la propriétés de target cell a l'élement cell
     //console.log(returnTarget);
-    if (returnTarget === cellElements[23]) {     //si c'est le cas
+    if (returnTargetFinal === cellElements[23]) {
+      //si c'est le cas
       cellElements[23].classList.add(`targetcell`); //j'ajoute la class css targetCell
     } else {
       console.log(`je suis dans le else`); // sinon un console.log
     }
 
-    //case d'arrivée ===============
-
-    // const cellElementFinal = cellElements[23];
-    // cellElementFinal.classList.add(`targetCell`);
-    // //==============================
+    //PARTIE 2
+    //cell du player
+    const returnTargetPlayer = Object.assign(cellElements[0], app.player);
+    if (returnTargetPlayer === cellElements[0]) {
+      const newDivElement = document.createElement(`div`);
+      newDivElement.classList.add(`player`);
+      cellElements[0].appendChild(newDivElement);
+      console.log(newDivElement);
+    } else {
+      console.log(`je suis dans le else`); // sinon un console.log
+    }
   },
 
+  
+  //PARTIE 3 
+  //
+  clearBoard: function () {
+
+
+  },
+    //PARTIE 3 
+    //
+  //   redrawBoard: function(){
+
+  //   app.clearBoard();
+  //   app.drawBoard();
+  
+
+
+
+  // },
+
   init: function () {
+
     console.log("init !");
     app.drawBoard(); // initialisation de la fonction d création de la grille
+    app.clearBoard();
+   // app.redrawBoard();
   },
 };
 console.log(app.targetCell);
+
+//app.redrawBoard();
 
 document.addEventListener("DOMContentLoaded", app.init);
