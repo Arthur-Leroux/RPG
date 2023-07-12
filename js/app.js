@@ -27,7 +27,6 @@ const app = {
         cellElement.classList.add(`cell`);
         rowElement.appendChild(cellElement);
         //console.log(cellElement);
-        
 
         /*
         Toujours dans la méthode drawBoard, lors de la création des cases, on rajoute une série de test :
@@ -41,17 +40,15 @@ const app = {
         // console.log(cellElement);
       }
     }
-    const cellElements = document.querySelectorAll(`.cell`);
-      //console.log(cellElements);
-      //sconsole.log(cellElements[23]);
-            const returnTarget = Object.assign(cellElements[23] ,app.targetCell);
-            console.log(returnTarget);
-            if(returnTarget === cellElements[23]){
-              cellElements[23].classList.add(`targetCell`)
-            }else{
-              console.log(`je suis dans le esle`)
-            }
+    const cellElements = document.querySelectorAll(`.cell`); //sélectionne toutes les div avec la classe .cell
 
+    const returnTarget = Object.assign(cellElements[23], app.targetCell); // j'assigne la propriétés de target cell a l'élement cell
+    //console.log(returnTarget);
+    if (returnTarget === cellElements[23]) {     //si c'est le cas
+      cellElements[23].classList.add(`targetcell`); //j'ajoute la class css targetCell
+    } else {
+      console.log(`je suis dans le else`); // sinon un console.log
+    }
 
     //case d'arrivée ===============
 
