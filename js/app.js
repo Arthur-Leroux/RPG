@@ -1,8 +1,11 @@
 const app = {
-  x: 0,
-  y: 0,
-  direction: "right",
-  targetCell : {
+  player: {
+    x: 0,
+    y: 0,
+    direction: "right",
+  },
+
+  targetCell: {
     x: 5,
     y: 3,
   },
@@ -23,16 +26,38 @@ const app = {
         const cellElement = document.createElement(`div`);
         cellElement.classList.add(`cell`);
         rowElement.appendChild(cellElement);
+        //console.log(cellElement);
+        
+
+        /*
+        Toujours dans la méthode drawBoard, lors de la création des cases, on rajoute une série de test :
+
+        Si la case courante a les mêmes coordonnées (x ET y) que la variable targetCell, 
+        on ajoute la classe CSS targetCell à la case.
+        Cette classe CSS est a créer pour que la case soit verte. */
+
+        // récuperer la case courante
+
         // console.log(cellElement);
       }
     }
     const cellElements = document.querySelectorAll(`.cell`);
-    
-    console.log(cellElements);
-    cellElements.forEach((cellElement) => {
-      const cell = [cellElement[23]]
-     console.log(cell);
-    });
+      //console.log(cellElements);
+      //sconsole.log(cellElements[23]);
+            const returnTarget = Object.assign(cellElements[23] ,app.targetCell);
+            console.log(returnTarget);
+            if(returnTarget === cellElements[23]){
+              cellElements[23].classList.add(`targetCell`)
+            }else{
+              console.log(`je suis dans le esle`)
+            }
+
+
+    //case d'arrivée ===============
+
+    // const cellElementFinal = cellElements[23];
+    // cellElementFinal.classList.add(`targetCell`);
+    // //==============================
   },
 
   init: function () {
