@@ -7,8 +7,8 @@ const app = {
   gameOver: false,
   
   playerCell: {
-    x: 1,
-    y: 2,
+    x: 0,
+    y: 0,
     direction: "right" // right ; left ; up ; down
   },
   
